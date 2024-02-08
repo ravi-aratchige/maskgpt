@@ -31,7 +31,7 @@ export default function Home() {
             About
           </a>
           <a
-            href="https://github.com/ravi-aratchige"
+            href="https://github.com/ravi-aratchige/maskgpt"
             target="_blank"
             rel="noopener"
           >
