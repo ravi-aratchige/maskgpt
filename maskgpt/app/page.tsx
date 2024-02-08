@@ -42,7 +42,7 @@ export default function Home() {
             <Textarea
               placeholder="Type your original text here."
               id="original-text"
-              className="h-80"
+              className="h-80 resize-none"
             />
           </div>
           {/* Masked text */}
@@ -51,7 +51,7 @@ export default function Home() {
             <Textarea
               placeholder="The masked text will be generated here."
               id="masked-text"
-              className="h-80"
+              className="h-80 resize-none"
             />
           </div>
         </section>
@@ -64,7 +64,15 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bottom-0 left-0 flex justify-center w-full py-6">
-        <p>Made with love!</p>
+        <p>
+          Made with ❤️ by{" "}
+          <a
+            href="https://github.com/ravi-aratchige"
+            className="hover:font-bold"
+          >
+            Ravindu Aratchige
+          </a>
+        </p>
       </footer>
     </main>
   );
