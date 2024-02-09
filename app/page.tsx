@@ -69,7 +69,7 @@ export default function Home() {
   return (
     <main className="flex flex-col absolute inset-0 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px]">
       {/* Header */}
-      <header className="w-full top-0 left-0 flex justify-between p-5">
+      <header className="w-full top-0 left-0 flex justify-between p-5 px-8">
         <div>
           <p className="font-bold">
             <span className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
@@ -96,7 +96,7 @@ export default function Home() {
 
       <section className="flex-grow">
         {/* Introduction */}
-        <h1 className="text-6xl font-extrabold tracking-tight lg:text-8xl text-center pt-14">
+        <h1 className="text-6xl font-extrabold tracking-tight lg:text-8xl text-center pt-14 px-8">
           Copy Like A{" "}
           <span className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
             Pro
@@ -112,7 +112,7 @@ export default function Home() {
         {/* Text areas */}
         <section className="flex justify-center px-8">
           {/* Original text */}
-          <div className="grid w-full gap-1.5 px-2">
+          <div className="grid w-full gap-1.5 pr-2">
             <div className="flex justify-between">
               <Label htmlFor="original-text">Original Text</Label>
             </div>
@@ -125,7 +125,7 @@ export default function Home() {
             />
           </div>
           {/* Masked text */}
-          <div className="grid w-full gap-1.5 px-2">
+          <div className="grid w-full gap-1.5 pl-2">
             <div className="flex justify-between">
               <Label htmlFor="masked-text">Masked Text</Label>
             </div>
