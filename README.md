@@ -44,6 +44,11 @@ Launch a development server to view the project:
 npm run dev
 ```
 
+MaskGPT will open up in <a>`localhost:3000`</a>.
+
+<img src="./assets/screenshot.png">
+<em>MaskGPT in action</em>
+
 ## Contribution
 
 This project is brand new, and all contributions are welcome via <a href="https://github.com/ravi-aratchige/maskgpt/pulls">pull requests</a>.
