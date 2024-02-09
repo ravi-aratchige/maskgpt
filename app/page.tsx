@@ -137,7 +137,12 @@ export default function Home() {
 
         {/* "Mask Text" Button */}
         <div className="flex flex-col items-center justify-between p-6">
-          <Button onClick={handleMaskText}>{buttonText}</Button>
+          <Button
+            onClick={handleMaskText}
+            variant={buttonText === "Copy Text" ? "outline" : undefined}
+          >
+            {buttonText}
+          </Button>
         </div>
       </section>
 
