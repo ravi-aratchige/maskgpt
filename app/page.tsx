@@ -1,24 +1,56 @@
 "use client";
 
-// import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef, SetStateAction } from "react";
 import { maskText } from "@/utilities/mask";
+import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+import { removeCommaBeforeAnd } from "@/utilities/comma";
 
 export default function Home() {
   // state for original text
   const [originalText, setOriginalText] = useState("");
+
   // state for masked text
   const [maskedText, setMaskedText] = useState("");
 
-  // handle mask button click
+  // state to track button text
+  const [buttonText, setButtonText] = useState("Mask Text");
+
+  // reference to "Masked Text" textarea
+  const maskedTextAreaRef = useRef<HTMLTextAreaElement | null>(null);
+
   const handleMaskText = () => {
-    // process original text using maskText function
-    const processedText = maskText(originalText);
-    // set masked text state
-    setMaskedText(processedText);
+    if (buttonText === "Mask Text") {
+      // remove any commas appearing right before the word "and"
+      const textWithoutCommaBeforeAnd = removeCommaBeforeAnd(originalText);
+
+      // mask the processed text with Cyrillic characters
+      const finalText = maskText(textWithoutCommaBeforeAnd);
+
+      // render the masked text in the "Masked Text" textarea
+      setMaskedText(finalText);
+
+      // update the state of the button text
+      setButtonText("Copy Text");
+    } else if (buttonText === "Copy Text") {
+      // copy text from the "Masked Text" textarea to the clipboard
+      maskedTextAreaRef.current?.select();
+      document.execCommand("copy");
+
+      // log the masked text to the console (for debugging)
+      console.log(`Masked text: ${maskedText}`);
+    }
+  };
+
+  // listen to changes happening to original text
+  const handleOriginalTextChange = (e: {
+    target: { value: SetStateAction<string> };
+  }) => {
+    setOriginalText(e.target.value);
+
+    // reset button text to "Mask Text"
+    setButtonText("Mask Text");
   };
 
   return (
@@ -57,31 +89,36 @@ export default function Home() {
         <section className="flex justify-center px-8">
           {/* Original text */}
           <div className="grid w-full gap-1.5 px-2">
-            <Label htmlFor="original-text">Original Text</Label>
+            <div className="flex justify-between">
+              <Label htmlFor="original-text">Original Text</Label>
+            </div>
             <Textarea
               placeholder="Type your original text here."
               id="original-text"
               className="h-80 resize-none"
               value={originalText}
-              onChange={(e) => setOriginalText(e.target.value)}
+              onChange={handleOriginalTextChange}
             />
           </div>
           {/* Masked text */}
           <div className="grid w-full gap-1.5 px-2">
-            <Label htmlFor="masked-text">Masked Text</Label>
+            <div className="flex justify-between">
+              <Label htmlFor="masked-text">Masked Text</Label>
+            </div>
             <Textarea
               placeholder="The masked text will be generated here."
               id="masked-text"
               className="h-80 resize-none"
               value={maskedText}
               readOnly
+              ref={maskedTextAreaRef}
             />
           </div>
         </section>
 
         {/* "Mask Text" Button */}
         <div className="flex flex-col items-center justify-between p-6">
-          <Button onClick={handleMaskText}>Mask Text</Button>
+          <Button onClick={handleMaskText}>{buttonText}</Button>
         </div>
       </section>
 
