@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MaskGPT - Copy like a Pro 🎭
 
-## Getting Started
+<img src="./assets/banner.png">
 
-First, run the development server:
+MaskGPT is an online tool for camouflaging text copied from sources such as books, academia and the Internet, as well as AI-generated content, to avoid detection by plagiarism checkers and AI-content detection software like <a href="https://www.turnitin.com/">Turnitin</a>.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+MaskGPT is built with NextJS, Vercel, Shadcn UI and TypeScript.
+
+## Under the Hood
+
+MaskGPT converts English letters in your plagiarised text into their <a href="https://en.wikipedia.org/wiki/Cyrillic_script">Cyrillic</a> counterparts. These Cyrillic counterparts are nearly identical to the respective English letters, and usually cannot be spotted by the human eye.
+
+Additionally, it removes commas in your text if they appear before an <b>"and"</b> word, they will be removed. This is because AI-generated content usually contains commas before the word "and" in most instances, which can be a dead giveaway for AI-generated content.
+
+For example,
+
+`"Monday, Tuesday, Wednesday, and Thursday"` will be converted to `"Monday, Tuesday, Wednesday and Thursday"`
+
+## Setup
+
+Make sure you have <a href="https://nodejs.org/en">NodeJS</a> (at least v18.7.0) installed on your system.
+
+Clone the repo to a desired location on your system:
+
+```shell
+git clone https://github.com/ravi-aratchige/maskgpt.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Navigate into the cloned directory:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```shell
+cd maskgpt
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Install the necessary packages:
 
-## Learn More
+```shell
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+Launch a development server to view the project:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```shell
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Contribution
 
-## Deploy on Vercel
+This project is brand new, and all contributions are welcome via <a href="https://github.com/ravi-aratchige/maskgpt/pulls">pull requests</a>.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Made with ❤️ by Ravindu Aratchige. This project is licensed under the <a href="https://github.com/ravi-aratchige/maskgpt/blob/main/LICENSE">Apache License</a>.
