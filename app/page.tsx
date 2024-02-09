@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { removeCommaBeforeAnd } from "@/utilities/comma";
+import { useToast } from "@/components/ui/use-toast";
 
 export default function Home() {
   // state for original text
@@ -19,6 +20,12 @@ export default function Home() {
 
   // reference to "Masked Text" textarea
   const maskedTextAreaRef = useRef<HTMLTextAreaElement | null>(null);
+
+  // reference to remove focus from textarea
+  const hiddenInputRef = useRef<HTMLInputElement | null>(null);
+
+  // toast component
+  const { toast } = useToast();
 
   const handleMaskText = () => {
     if (buttonText === "Mask Text") {
@@ -38,8 +45,14 @@ export default function Home() {
       maskedTextAreaRef.current?.select();
       document.execCommand("copy");
 
+      // remove focus from the textarea
+      hiddenInputRef.current?.focus();
+
       // log the masked text to the console (for debugging)
       console.log(`Masked text: ${maskedText}`);
+
+      // display a toast message (after copying to clipboard)
+      toast({ description: "Copied text to clipboard" });
     }
   };
 
@@ -112,6 +125,12 @@ export default function Home() {
               value={maskedText}
               readOnly
               ref={maskedTextAreaRef}
+            />
+            {/* Hidden input */}
+            <input
+              type="text"
+              style={{ position: "absolute", left: "-9999px" }}
+              ref={hiddenInputRef}
             />
           </div>
         </section>
