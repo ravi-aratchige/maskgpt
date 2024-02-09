@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useRef, SetStateAction } from "react";
 import { maskText } from "@/utilities/mask";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { removeCommaBeforeAnd } from "@/utilities/comma";
 import { useToast } from "@/components/ui/use-toast";
+import { useState, useRef, SetStateAction } from "react";
+import { removeCommaBeforeAnd } from "@/utilities/comma";
 
 export default function Home() {
   // state for original text

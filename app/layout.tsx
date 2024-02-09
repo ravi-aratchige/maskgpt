@@ -1,16 +1,8 @@
-import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
-// import { cn } from "../@/lib/utils"
 import { cn } from "../lib/utils";
+import type { Metadata } from "next";
 import { Toaster } from "@/components/ui/toaster";
-
-// const inter = Inter({ subsets: ["latin"] });
-
-// export const fontSans = FontSans({
-//   subsets: ["latin"],
-//   variable: "--font-sans",
-// });
+import { Inter as FontSans } from "next/font/google";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -19,7 +11,8 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   title: "MaskGPT",
-  description: "Disguise AI-generated text from AI content checkers",
+  description:
+    "Disguise plagiarised and AI-generated text from content checkers",
 };
 
 export default function RootLayout({
