@@ -97,7 +97,7 @@ export default function Home() {
       <section className="flex-grow">
         {/* Introduction */}
         <h1 className="text-6xl font-extrabold tracking-tight lg:text-8xl text-center pt-14 px-8">
-          Copy Like A{" "}
+          Copy like a{" "}
           <span className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
             Pro
           </span>
