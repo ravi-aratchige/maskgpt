@@ -159,7 +159,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bottom-0 left-0 flex justify-center w-full py-6">
-        <p>
+        <p className="text-xs">
           Made with ❤️ by{" "}
           <a
             href="https://github.com/ravi-aratchige"
