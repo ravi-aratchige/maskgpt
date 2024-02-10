@@ -10,7 +10,7 @@ MaskGPT is built with NextJS, Vercel, Shadcn UI and TypeScript.
 
 MaskGPT converts English letters in your plagiarised text into their <a href="https://en.wikipedia.org/wiki/Cyrillic_script">Cyrillic</a> counterparts. These Cyrillic counterparts are nearly identical to the respective English letters, and usually cannot be spotted by the human eye.
 
-Additionally, it removes commas in your text if they appear before an <b>"and"</b> word, they will be removed. This is because AI-generated content usually contains commas before the word "and" in most instances, which can be a dead giveaway for AI-generated content.
+Additionally, it removes commas in your text if they appear before an <b>"and"</b> word, they will be removed. This is because text written by most mainstream LLMs usually contain commas before the word "and" in most instances, which can be a dead giveaway for AI-generated content.
 
 For example,
 
