@@ -119,7 +119,7 @@ export default function Home() {
             <Textarea
               placeholder="Type your original text here."
               id="original-text"
-              className="h-80 resize-none"
+              className="h-80 resize-none bg-white"
               value={originalText}
               onChange={handleOriginalTextChange}
             />
@@ -132,7 +132,7 @@ export default function Home() {
             <Textarea
               placeholder="The masked text will be generated here."
               id="masked-text"
-              className="h-80 resize-none"
+              className="h-80 resize-none bg-white"
               value={maskedText}
               readOnly
               ref={maskedTextAreaRef}
